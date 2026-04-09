@@ -1,0 +1,55 @@
+---
+const points = [
+  {
+    id: '01',
+    title: 'Ponto de atenção 1 — TODO',
+    description: 'Descrição do ponto de atenção. O que o praticante precisa entender ou monitorar.',
+  },
+  {
+    id: '02',
+    title: 'Ponto de atenção 2 — TODO',
+    description: 'Descrição do ponto de atenção.',
+  },
+  {
+    id: '03',
+    title: 'Ponto de atenção 3 — TODO',
+    description: 'Descrição do ponto de atenção.',
+  },
+  {
+    id: '04',
+    title: 'Ponto de atenção 4 — TODO',
+    description: 'Descrição do ponto de atenção.',
+  },
+];
+---
+
+<section id="key-points" class="divider py-24">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="grid md:grid-cols-[1fr_2fr] gap-12 items-start">
+      <!-- Label column -->
+      <div class="flex flex-col gap-3">
+        <span class="section-number">03 /</span>
+        <h2 class="font-mono font-bold text-2xl text-white leading-tight">
+          Principais pontos<br />de atenção
+        </h2>
+        <p class="font-sans text-sm leading-relaxed mt-1" style="color: var(--subtle);">
+          O que monitorar e o que não ignorar ao aplicar o método.
+        </p>
+      </div>
+
+      <!-- Content column: card grid -->
+      <div class="grid sm:grid-cols-2 gap-4">
+        {points.map((p) => (
+          <div
+            class="rounded-lg p-5 flex flex-col gap-3 transition-colors duration-200"
+            style="background: var(--surface); border: 1px solid var(--border);"
+          >
+            <span class="font-mono text-xs" style="color: var(--accent);">{p.id}</span>
+            <h3 class="font-mono text-sm font-medium text-white">{p.title}</h3>
+            <p class="font-sans text-sm leading-relaxed" style="color: var(--muted);">{p.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

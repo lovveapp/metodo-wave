@@ -1,0 +1,81 @@
+---
+const navItems = [
+  { label: 'O Método', href: '#what-is-wave' },
+  { label: 'Origem', href: '#how-created' },
+  { label: 'Pontos-chave', href: '#key-points' },
+  { label: 'Sessão', href: '#training-session' },
+  { label: 'Exercícios', href: '#exercises' },
+  { label: 'Prioridades', href: '#priorities' },
+];
+---
+
+<nav
+  class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 backdrop-blur-md"
+  style="background: rgba(9,9,11,0.85);"
+>
+  <div class="max-w-5xl mx-auto px-6 flex items-center justify-between h-14">
+    <a href="#" class="font-mono font-bold text-sm tracking-widest text-cyan-400 uppercase select-none">
+      Wave<span class="text-zinc-600">.</span>
+    </a>
+
+    <ul class="hidden md:flex items-center gap-7">
+      {navItems.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            class="font-mono text-xs text-zinc-500 hover:text-zinc-200 transition-colors duration-150 tracking-wide uppercase"
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <button
+      id="menu-toggle"
+      class="md:hidden text-zinc-500 hover:text-zinc-200 transition-colors"
+      aria-label="Abrir menu"
+    >
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path
+          d="M3 6h14M3 10h14M3 14h14"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+        />
+      </svg>
+    </button>
+  </div>
+
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden border-t border-zinc-800"
+    style="background: rgba(9,9,11,0.98);"
+  >
+    <ul class="flex flex-col py-3">
+      {navItems.map((item) => (
+        <li>
+          <a
+            href={item.href}
+            class="block px-6 py-2.5 font-mono text-xs text-zinc-500 hover:text-zinc-200 hover:bg-zinc-900/60 transition-colors tracking-wide uppercase"
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+
+  toggle?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+
+  menu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => menu.classList.add('hidden'));
+  });
+</script>

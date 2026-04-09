@@ -1,0 +1,90 @@
+---
+const levels = [
+  {
+    level: 'Alta',
+    color: '#06b6d4',
+    bg: 'rgba(6,182,212,0.08)',
+    border: 'rgba(6,182,212,0.25)',
+    items: ['Prioridade de alta importância 1 — TODO', 'Prioridade de alta importância 2 — TODO'],
+  },
+  {
+    level: 'Média',
+    color: '#818cf8',
+    bg: 'rgba(129,140,248,0.08)',
+    border: 'rgba(129,140,248,0.25)',
+    items: ['Prioridade média 1 — TODO', 'Prioridade média 2 — TODO'],
+  },
+  {
+    level: 'Baixa',
+    color: '#a1a1aa',
+    bg: 'rgba(161,161,170,0.06)',
+    border: 'rgba(161,161,170,0.15)',
+    items: ['Prioridade secundária 1 — TODO', 'Prioridade secundária 2 — TODO'],
+  },
+];
+---
+
+<section id="priorities" class="divider py-24">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="grid md:grid-cols-[1fr_2fr] gap-12 items-start">
+      <!-- Label column -->
+      <div class="flex flex-col gap-3">
+        <span class="section-number">06 /</span>
+        <h2 class="font-mono font-bold text-2xl text-white leading-tight">
+          Definição de<br />prioridades
+        </h2>
+        <p class="font-sans text-sm leading-relaxed mt-1" style="color: var(--subtle);">
+          O que vem primeiro e por quê.
+        </p>
+      </div>
+
+      <!-- Content column -->
+      <div class="flex flex-col gap-8">
+        <p class="font-sans text-base leading-relaxed" style="color: var(--muted);">
+          <!-- Placeholder: introdução ao sistema de prioridades -->
+          Como o Wave define e hierarquiza prioridades no treinamento — a lógica por trás
+          da ordem de decisão e como isso impacta a progressão a longo prazo.
+        </p>
+
+        <!-- Priority tiers -->
+        <div class="flex flex-col gap-4">
+          {levels.map((l) => (
+            <div
+              class="rounded-lg overflow-hidden"
+              style={`border: 1px solid ${l.border};`}
+            >
+              <div
+                class="px-5 py-2.5 flex items-center gap-2"
+                style={`background: ${l.bg}; border-bottom: 1px solid ${l.border};`}
+              >
+                <span
+                  class="w-2 h-2 rounded-full"
+                  style={`background: ${l.color};`}
+                ></span>
+                <span
+                  class="font-mono text-xs tracking-widest uppercase"
+                  style={`color: ${l.color};`}
+                >
+                  {l.level} prioridade
+                </span>
+              </div>
+              <ul
+                class="divide-y px-5"
+                style={`--tw-divide-color: ${l.border};`}
+              >
+                {l.items.map((item) => (
+                  <li
+                    class="py-3 font-sans text-sm"
+                    style={`color: var(--muted); border-top: 1px solid ${l.border};`}
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

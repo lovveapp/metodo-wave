@@ -1,0 +1,55 @@
+---
+---
+
+<section id="what-is-wave" class="divider py-24">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="grid md:grid-cols-[1fr_2fr] gap-12 items-start">
+      <!-- Label column -->
+      <div class="flex flex-col gap-3">
+        <span class="section-number">01 /</span>
+        <h2 class="font-mono font-bold text-2xl text-white leading-tight">
+          O que é o<br />Método Wave
+        </h2>
+      </div>
+
+      <!-- Content column -->
+      <div class="flex flex-col gap-8">
+        <!-- Lead paragraph — TODO: substituir -->
+        <p class="font-sans text-base leading-relaxed" style="color: var(--muted);">
+          <!-- Placeholder: explique o conceito central do Wave em 2-3 frases -->
+          Descrição clara e direta do que é o Método Wave — o problema que ele resolve,
+          o princípio central que o governa, e o que o diferencia de outras abordagens
+          de periodização.
+        </p>
+
+        <!-- Definition block -->
+        <div
+          class="rounded-lg p-5"
+          style="background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent);"
+        >
+          <p class="font-mono text-sm leading-relaxed" style="color: var(--muted);">
+            <!-- Placeholder: uma definição concisa, quase técnica, do Wave -->
+            "Definição do Método Wave em uma ou duas frases de alta densidade conceitual."
+          </p>
+        </div>
+
+        <!-- Key characteristics -->
+        <div class="flex flex-col gap-4">
+          <span class="section-label">Características</span>
+          <ul class="flex flex-col gap-3">
+            {[
+              'Característica 1 — TODO',
+              'Característica 2 — TODO',
+              'Característica 3 — TODO',
+            ].map((item) => (
+              <li class="flex items-start gap-3">
+                <span class="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style="background: var(--accent);"></span>
+                <span class="font-sans text-sm" style="color: var(--muted);">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

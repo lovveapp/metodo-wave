@@ -1,0 +1,52 @@
+---
+---
+
+<section id="about" class="divider py-24">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="grid md:grid-cols-[1fr_2fr] gap-12 items-start">
+      <!-- Label column -->
+      <div class="flex flex-col gap-3">
+        <span class="section-number">00 /</span>
+        <h2 class="font-mono font-bold text-2xl text-white leading-tight">
+          Quem sou eu
+        </h2>
+      </div>
+
+      <!-- Content column -->
+      <div class="flex flex-col gap-6">
+        <!-- Avatar / photo placeholder -->
+        <div
+          class="w-20 h-20 rounded-xl flex items-center justify-center font-mono font-bold text-2xl"
+          style="background: var(--surface); border: 1px solid var(--border); color: var(--accent);"
+        >
+          PH
+        </div>
+
+        <!-- Bio — TODO: substituir pelo texto real -->
+        <p class="font-sans text-base leading-relaxed" style="color: var(--muted);">
+          <!-- Placeholder — insira sua bio aqui -->
+          Breve descrição sobre quem você é, sua trajetória no treinamento de força
+          e o que te levou a desenvolver o Método Wave.
+        </p>
+
+        <p class="font-sans text-base leading-relaxed" style="color: var(--muted);">
+          <!-- Placeholder — contexto adicional: formação, experiência, motivação -->
+          Sua experiência com algoritmos, ciência do esporte e o problema prático
+          que o método veio resolver.
+        </p>
+
+        <!-- Tags / credenciais -->
+        <div class="flex flex-wrap gap-2 pt-2">
+          {['Treinamento de Força', 'Algoritmos', 'Ciência do Esporte'].map((tag) => (
+            <span
+              class="font-mono text-xs px-3 py-1 rounded-full"
+              style="background: var(--surface); border: 1px solid var(--border); color: var(--subtle);"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

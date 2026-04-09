@@ -1,0 +1,78 @@
+---
+const criteria = [
+  { title: 'Critério 1 — TODO', desc: 'Explique o critério de seleção de exercícios.' },
+  { title: 'Critério 2 — TODO', desc: 'Explique o critério de seleção de exercícios.' },
+  { title: 'Critério 3 — TODO', desc: 'Explique o critério de seleção de exercícios.' },
+];
+---
+
+<section id="exercises" class="divider py-24">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="grid md:grid-cols-[1fr_2fr] gap-12 items-start">
+      <!-- Label column -->
+      <div class="flex flex-col gap-3">
+        <span class="section-number">05 /</span>
+        <h2 class="font-mono font-bold text-2xl text-white leading-tight">
+          Escolha dos<br />exercícios
+        </h2>
+        <p class="font-sans text-sm leading-relaxed mt-1" style="color: var(--subtle);">
+          Critérios e lógica de seleção.
+        </p>
+      </div>
+
+      <!-- Content column -->
+      <div class="flex flex-col gap-8">
+        <p class="font-sans text-base leading-relaxed" style="color: var(--muted);">
+          <!-- Placeholder: introdução à seleção de exercícios -->
+          Como o Wave guia a escolha dos exercícios — quais variáveis são consideradas,
+          o papel da especificidade e a relação com os objetivos do praticante.
+        </p>
+
+        <!-- Criteria list -->
+        <div class="flex flex-col gap-4">
+          <span class="section-label">Critérios de seleção</span>
+          <div class="flex flex-col gap-3">
+            {criteria.map((c) => (
+              <div
+                class="rounded-lg px-5 py-4 flex gap-4 items-start"
+                style="background: var(--surface); border: 1px solid var(--border);"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  fill="none"
+                  class="shrink-0 mt-0.5"
+                >
+                  <circle cx="9" cy="9" r="8" stroke="var(--accent)" stroke-width="1.2" opacity="0.4"/>
+                  <path
+                    d="M6 9l2 2 4-4"
+                    stroke="var(--accent)"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <div>
+                  <p class="font-mono text-sm font-medium text-white mb-1">{c.title}</p>
+                  <p class="font-sans text-sm" style="color: var(--muted);">{c.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Note box -->
+        <div
+          class="rounded-lg px-5 py-4"
+          style="background: rgba(6,182,212,0.05); border: 1px solid var(--accent-border);"
+        >
+          <p class="font-mono text-xs leading-relaxed" style="color: var(--accent);">
+            <!-- Placeholder: nota importante ou aviso sobre seleção de exercícios -->
+            Nota: consideração importante sobre a escolha de exercícios — TODO.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

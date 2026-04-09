@@ -1,0 +1,72 @@
+---
+const steps = [
+  {
+    step: '01',
+    title: 'Identificação do problema — TODO',
+    description: 'Descreva o problema prático que motivou a criação do método.',
+  },
+  {
+    step: '02',
+    title: 'Revisão da literatura — TODO',
+    description: 'Quais artigos e evidências científicas foram a base do desenvolvimento.',
+  },
+  {
+    step: '03',
+    title: 'Desenvolvimento do algoritmo — TODO',
+    description: 'Como o raciocínio algorítmico foi aplicado para estruturar a periodização.',
+  },
+  {
+    step: '04',
+    title: 'Validação prática — TODO',
+    description: 'Como o método foi testado, refinado e validado na prática.',
+  },
+];
+---
+
+<section id="how-created" class="divider py-24">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="grid md:grid-cols-[1fr_2fr] gap-12 items-start">
+      <!-- Label column -->
+      <div class="flex flex-col gap-3">
+        <span class="section-number">02 /</span>
+        <h2 class="font-mono font-bold text-2xl text-white leading-tight">
+          Como foi criado
+        </h2>
+      </div>
+
+      <!-- Content column -->
+      <div class="flex flex-col gap-6">
+        <p class="font-sans text-base leading-relaxed" style="color: var(--muted);">
+          <!-- Placeholder: contexto geral sobre a origem do método -->
+          Introdução sobre o processo de criação — a jornada de um problema prático
+          até um sistema estruturado com base em ciência e algoritmos.
+        </p>
+
+        <!-- Timeline -->
+        <div class="flex flex-col gap-0 mt-2">
+          {steps.map((s, i) => (
+            <div class="flex gap-5">
+              <!-- Spine -->
+              <div class="flex flex-col items-center">
+                <div
+                  class="w-8 h-8 rounded-lg flex items-center justify-center font-mono text-xs font-bold shrink-0"
+                  style="background: var(--accent-dim); border: 1px solid var(--accent-border); color: var(--accent);"
+                >
+                  {s.step}
+                </div>
+                {i < steps.length - 1 && (
+                  <div class="w-px flex-1 my-1" style="background: var(--border);"></div>
+                )}
+              </div>
+              <!-- Content -->
+              <div class="pb-8 pt-1">
+                <h3 class="font-mono text-sm font-medium text-white mb-1">{s.title}</h3>
+                <p class="font-sans text-sm leading-relaxed" style="color: var(--muted);">{s.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
