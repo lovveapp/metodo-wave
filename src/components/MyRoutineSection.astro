@@ -1,0 +1,53 @@
+---
+import MyRoutine from './MyRoutine.tsx';
+---
+
+<section id="my-routine" class="divider py-24">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="grid md:grid-cols-[1fr_2fr] gap-12 items-start">
+
+      <!-- Label column -->
+      <div class="flex flex-col gap-3 md:sticky md:top-20">
+        <span class="section-number">07 /</span>
+        <h2 class="font-mono font-bold text-2xl text-white leading-tight">
+          A rotina<br />do PH
+        </h2>
+        <p class="font-sans text-sm leading-relaxed mt-1" style="color: var(--subtle);">
+          Wave aplicado na prática — com todas as adaptações reais.
+        </p>
+      </div>
+
+      <!-- Content column -->
+      <div class="flex flex-col gap-6">
+        <p class="font-sans text-base leading-relaxed" style="color: var(--muted);">
+          O Wave na prática. Esta é a rotina usada pelo PH — 8 sessões organizadas em
+          variações A/B para maximizar a diversidade de ângulos e padrões de movimento.
+          Cada decisão de exercício reflete os princípios do método aplicados às
+          restrições reais: 2m de altura, equipamentos disponíveis na Nitrogym e
+          prioridade Lower definida.
+        </p>
+
+        <a
+          href="https://hevy.com/user/ow_ph"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-3 px-4 py-3 rounded-lg font-mono text-sm transition-colors duration-150 self-start"
+          style="background: var(--surface); border: 1px solid var(--border); color: var(--muted);"
+          onmouseover="this.style.borderColor='var(--accent-border)'; this.style.color='var(--accent)'"
+          onmouseout="this.style.borderColor='var(--border)'; this.style.color='var(--muted)'"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" fill="currentColor" opacity="0.4"/>
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z" fill="currentColor" opacity="0"/>
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" opacity="0.3"/>
+            <path d="M8 9.5C8 8.67 8.67 8 9.5 8h5C15.33 8 16 8.67 16 9.5v5c0 .83-.67 1.5-1.5 1.5h-5C8.67 16 8 15.33 8 14.5v-5z" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M10 11v2M12 10v4M14 11v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          Acompanhar treinos no Hevy↗
+        </a>
+
+        <MyRoutine client:load />
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,66 +1,38 @@
 ---
-const blocks = [
-  { label: 'Bloco 1', title: 'TODO — Nome do bloco', desc: 'Descrição e objetivo deste bloco dentro da sessão.' },
-  { label: 'Bloco 2', title: 'TODO — Nome do bloco', desc: 'Descrição e objetivo deste bloco dentro da sessão.' },
-  { label: 'Bloco 3', title: 'TODO — Nome do bloco', desc: 'Descrição e objetivo deste bloco dentro da sessão.' },
-  { label: 'Bloco 4', title: 'TODO — Nome do bloco', desc: 'Descrição e objetivo deste bloco dentro da sessão.' },
-];
+import WaveBuildChart from './WaveBuildChart.tsx';
 ---
 
 <section id="training-session" class="divider py-24">
   <div class="max-w-5xl mx-auto px-6">
     <div class="grid md:grid-cols-[1fr_2fr] gap-12 items-start">
+
       <!-- Label column -->
-      <div class="flex flex-col gap-3">
+      <div class="flex flex-col gap-3 md:sticky md:top-20">
         <span class="section-number">04 /</span>
         <h2 class="font-mono font-bold text-2xl text-white leading-tight">
-          Organização da<br />sessão de treino
+          Como o Wave<br />foi construído
         </h2>
         <p class="font-sans text-sm leading-relaxed mt-1" style="color: var(--subtle);">
-          Como estruturar cada sessão dentro do Wave.
+          O método se formando passo a passo — do primeiro treino até o ciclo completo.
         </p>
       </div>
 
       <!-- Content column -->
       <div class="flex flex-col gap-6">
         <p class="font-sans text-base leading-relaxed" style="color: var(--muted);">
-          <!-- Placeholder: visão geral da estrutura de sessão -->
-          Explicação sobre a lógica de organização da sessão — o porquê de cada bloco
-          existir e como eles se relacionam entre si dentro do método.
+          O gráfico abaixo mostra como o Wave foi construído: começa com uma única sessão
+          e vai adicionando treinos até o padrão de ondas emergir por completo.
+          Cada passo revela uma decisão de design do método.
         </p>
 
-        <!-- Session flow -->
-        <div
-          class="rounded-xl overflow-hidden"
-          style="border: 1px solid var(--border);"
-        >
-          <div
-            class="px-5 py-3 flex items-center gap-2"
-            style="background: var(--surface); border-bottom: 1px solid var(--border);"
-          >
-            <span class="section-label">Estrutura da sessão</span>
-          </div>
-          <div class="divide-y" style="--tw-divide-opacity: 1; border-color: var(--border);">
-            {blocks.map((b, i) => (
-              <div
-                class="flex items-start gap-4 px-5 py-4"
-                style="border-top: 1px solid var(--border);"
-              >
-                <span
-                  class="font-mono text-xs mt-0.5 shrink-0 px-2 py-0.5 rounded"
-                  style="background: var(--accent-dim); color: var(--accent); border: 1px solid var(--accent-border);"
-                >
-                  {b.label}
-                </span>
-                <div>
-                  <p class="font-mono text-sm font-medium text-white mb-1">{b.title}</p>
-                  <p class="font-sans text-sm" style="color: var(--muted);">{b.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <WaveBuildChart client:load />
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .scroll-wrap::-webkit-scrollbar { height: 5px; }
+  .scroll-wrap::-webkit-scrollbar-track { background: #18181b; border-radius: 3px; }
+  .scroll-wrap::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 3px; }
+</style>

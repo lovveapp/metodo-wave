@@ -1,11 +1,20 @@
 ---
+const characteristics = [
+  'Ciclo de 4 sessões: Upper Front, Lower Front, Upper Back, Lower Back',
+  'Cada grupo muscular treinado no mínimo 2x por semana',
+  'Volume semanal dentro da faixa ótima: 10–20 séries por grupo',
+  'Sequenciamento intrassessão baseado em recuperação relativa',
+  'Variação de exercícios por ângulo e padrão de movimento',
+  'Mini deload cíclico automático — sem necessidade de programação manual',
+];
 ---
 
 <section id="what-is-wave" class="divider py-24">
   <div class="max-w-5xl mx-auto px-6">
     <div class="grid md:grid-cols-[1fr_2fr] gap-12 items-start">
+
       <!-- Label column -->
-      <div class="flex flex-col gap-3">
+      <div class="flex flex-col gap-3 md:sticky md:top-20">
         <span class="section-number">01 /</span>
         <h2 class="font-mono font-bold text-2xl text-white leading-tight">
           O que é o<br />Método Wave
@@ -14,12 +23,12 @@
 
       <!-- Content column -->
       <div class="flex flex-col gap-8">
-        <!-- Lead paragraph — TODO: substituir -->
+
         <p class="font-sans text-base leading-relaxed" style="color: var(--muted);">
-          <!-- Placeholder: explique o conceito central do Wave em 2-3 frases -->
-          Descrição clara e direta do que é o Método Wave — o problema que ele resolve,
-          o princípio central que o governa, e o que o diferencia de outras abordagens
-          de periodização.
+          O Wave é um modelo matemático de divisão e periodização de treino de força, criado para
+          responder a uma pergunta simples: é possível organizar o treinamento de forma que todas
+          as variáveis relevantes — frequência, volume, recuperação e sequenciamento — sejam
+          otimizadas ao mesmo tempo?
         </p>
 
         <!-- Definition block -->
@@ -28,27 +37,45 @@
           style="background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent);"
         >
           <p class="font-mono text-sm leading-relaxed" style="color: var(--muted);">
-            <!-- Placeholder: uma definição concisa, quase técnica, do Wave -->
-            "Definição do Método Wave em uma ou duas frases de alta densidade conceitual."
+            "Dado um conjunto de grupos musculares, prioridades relativas e restrições de
+            frequência semanal, o Wave gera uma distribuição de sessões que satisfaz todas
+            as restrições científicas simultaneamente."
           </p>
         </div>
 
-        <!-- Key characteristics -->
+        <p class="font-sans text-base leading-relaxed" style="color: var(--muted);">
+          Tecnicamente, o Wave é a fusão das duas divisões mais populares do treinamento de
+          força: o <span class="font-mono text-sm text-white">PPL</span> (Push/Pull/Legs) e
+          o <span class="font-mono text-sm text-white">Upper/Lower</span>. O PPL organiza
+          por padrão de movimento; o Upper/Lower organiza por região anatômica. O Wave usa
+          a lógica de sequenciamento do PPL e a lógica de distribuição de frequência do
+          Upper/Lower — e ocupa matematicamente o meio desse espectro.
+        </p>
+
+        <!-- Characteristics -->
         <div class="flex flex-col gap-4">
-          <span class="section-label">Características</span>
+          <span class="section-label">Características do método</span>
           <ul class="flex flex-col gap-3">
-            {[
-              'Característica 1 — TODO',
-              'Característica 2 — TODO',
-              'Característica 3 — TODO',
-            ].map((item) => (
+            {characteristics.map((item) => (
               <li class="flex items-start gap-3">
-                <span class="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style="background: var(--accent);"></span>
-                <span class="font-sans text-sm" style="color: var(--muted);">{item}</span>
+                <span class="mt-2 w-1.5 h-1.5 rounded-full shrink-0" style="background: var(--accent);"></span>
+                <span class="font-sans text-sm leading-relaxed" style="color: var(--muted);">{item}</span>
               </li>
             ))}
           </ul>
         </div>
+
+        <!-- For whom -->
+        <div
+          class="rounded-lg px-5 py-4"
+          style="background: rgba(6,182,212,0.05); border: 1px solid var(--accent-border);"
+        >
+          <p class="font-mono text-xs leading-relaxed" style="color: var(--accent);">
+            O Wave é desenhado para quem treina <strong>5 ou 6 vezes por semana</strong> e já tem
+            padrões motores estabelecidos. Não é recomendado para iniciantes.
+          </p>
+        </div>
+
       </div>
     </div>
   </div>

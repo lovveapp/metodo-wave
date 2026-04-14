@@ -1,89 +1,141 @@
 ---
-const levels = [
-  {
-    level: 'Alta',
-    color: '#06b6d4',
-    bg: 'rgba(6,182,212,0.08)',
-    border: 'rgba(6,182,212,0.25)',
-    items: ['Prioridade de alta importância 1 — TODO', 'Prioridade de alta importância 2 — TODO'],
-  },
-  {
-    level: 'Média',
-    color: '#818cf8',
-    bg: 'rgba(129,140,248,0.08)',
-    border: 'rgba(129,140,248,0.25)',
-    items: ['Prioridade média 1 — TODO', 'Prioridade média 2 — TODO'],
-  },
-  {
-    level: 'Baixa',
-    color: '#a1a1aa',
-    bg: 'rgba(161,161,170,0.06)',
-    border: 'rgba(161,161,170,0.15)',
-    items: ['Prioridade secundária 1 — TODO', 'Prioridade secundária 2 — TODO'],
-  },
-];
 ---
 
 <section id="priorities" class="divider py-24">
   <div class="max-w-5xl mx-auto px-6">
     <div class="grid md:grid-cols-[1fr_2fr] gap-12 items-start">
+
       <!-- Label column -->
-      <div class="flex flex-col gap-3">
-        <span class="section-number">06 /</span>
+      <div class="flex flex-col gap-3 md:sticky md:top-20">
+        <span class="section-number">05 /</span>
         <h2 class="font-mono font-bold text-2xl text-white leading-tight">
           Definição de<br />prioridades
         </h2>
         <p class="font-sans text-sm leading-relaxed mt-1" style="color: var(--subtle);">
-          O que vem primeiro e por quê.
+          Onde você quer colocar mais energia?
         </p>
       </div>
 
       <!-- Content column -->
       <div class="flex flex-col gap-8">
+
         <p class="font-sans text-base leading-relaxed" style="color: var(--muted);">
-          <!-- Placeholder: introdução ao sistema de prioridades -->
-          Como o Wave define e hierarquiza prioridades no treinamento — a lógica por trás
-          da ordem de decisão e como isso impacta a progressão a longo prazo.
+          Antes de começar, o praticante define qual região receberá maior ênfase no ciclo.
+          Essa escolha impacta diretamente o volume dos grupos principais — não a estrutura
+          das sessões, que permanece a mesma.
         </p>
 
-        <!-- Priority tiers -->
-        <div class="flex flex-col gap-4">
-          {levels.map((l) => (
-            <div
-              class="rounded-lg overflow-hidden"
-              style={`border: 1px solid ${l.border};`}
-            >
-              <div
-                class="px-5 py-2.5 flex items-center gap-2"
-                style={`background: ${l.bg}; border-bottom: 1px solid ${l.border};`}
-              >
-                <span
-                  class="w-2 h-2 rounded-full"
-                  style={`background: ${l.color};`}
-                ></span>
-                <span
-                  class="font-mono text-xs tracking-widest uppercase"
-                  style={`color: ${l.color};`}
-                >
-                  {l.level} prioridade
-                </span>
-              </div>
-              <ul
-                class="divide-y px-5"
-                style={`--tw-divide-color: ${l.border};`}
-              >
-                {l.items.map((item) => (
-                  <li
-                    class="py-3 font-sans text-sm"
-                    style={`color: var(--muted); border-top: 1px solid ${l.border};`}
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
+        <!-- Choice cards -->
+        <div class="grid sm:grid-cols-2 gap-4">
+
+          <!-- Upper priority -->
+          <div class="rounded-xl overflow-hidden" style="border: 1px solid rgba(6,182,212,0.3);">
+            <div class="px-5 py-3 flex items-center gap-2" style="background: rgba(6,182,212,0.08); border-bottom: 1px solid rgba(6,182,212,0.2);">
+              <span class="w-2 h-2 rounded-full" style="background: #06b6d4;"></span>
+              <span class="font-mono text-xs font-bold text-white">Prioridade Upper</span>
             </div>
-          ))}
+            <div class="px-5 py-4 flex flex-col gap-4">
+              <div class="flex flex-col gap-2">
+                <span class="section-label">Grupos de Upper</span>
+                <div class="flex items-baseline gap-2">
+                  <span class="font-mono text-3xl font-bold" style="color: #06b6d4;">4</span>
+                  <span class="font-sans text-sm" style="color: var(--muted);">séries · proximidade de falha</span>
+                </div>
+              </div>
+              <div class="flex flex-col gap-2">
+                <span class="section-label">Grupos de Lower</span>
+                <div class="flex items-baseline gap-2">
+                  <span class="font-mono text-3xl font-bold" style="color: var(--subtle);">3</span>
+                  <span class="font-sans text-sm" style="color: var(--muted);">séries · até a falha</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lower priority -->
+          <div class="rounded-xl overflow-hidden" style="border: 1px solid rgba(245,158,11,0.3);">
+            <div class="px-5 py-3 flex items-center gap-2" style="background: rgba(245,158,11,0.08); border-bottom: 1px solid rgba(245,158,11,0.2);">
+              <span class="w-2 h-2 rounded-full" style="background: #f59e0b;"></span>
+              <span class="font-mono text-xs font-bold text-white">Prioridade Lower</span>
+            </div>
+            <div class="px-5 py-4 flex flex-col gap-4">
+              <div class="flex flex-col gap-2">
+                <span class="section-label">Grupos de Lower</span>
+                <div class="flex items-baseline gap-2">
+                  <span class="font-mono text-3xl font-bold" style="color: #f59e0b;">4</span>
+                  <span class="font-sans text-sm" style="color: var(--muted);">séries · proximidade de falha</span>
+                </div>
+              </div>
+              <div class="flex flex-col gap-2">
+                <span class="section-label">Grupos de Upper</span>
+                <div class="flex items-baseline gap-2">
+                  <span class="font-mono text-3xl font-bold" style="color: var(--subtle);">3</span>
+                  <span class="font-sans text-sm" style="color: var(--muted);">séries · até a falha</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
+
+        <!-- Distinction note -->
+        <div class="rounded-lg px-5 py-4 flex flex-col gap-2" style="background: var(--surface); border: 1px solid var(--border);">
+          <span class="section-label">Proximidade de falha vs. falha</span>
+          <p class="font-sans text-sm leading-relaxed" style="color: var(--muted);">
+            Os grupos prioritários trabalham com <span class="font-mono text-sm text-white">4 séries em proximidade de falha</span> —
+            o estímulo é alto, mas a recuperação entre sessões é preservada.
+            Os grupos secundários trabalham com <span class="font-mono text-sm text-white">3 séries até a falha</span> —
+            volume menor, intensidade máxima. A combinação garante que nenhum grupo
+            seja negligenciado, mas que a energia do praticante seja direcionada
+            para onde importa mais naquele ciclo.
+          </p>
+        </div>
+
+        <!-- Secondary group customization -->
+        <div class="flex flex-col gap-5">
+          <div>
+            <h3 class="font-mono text-sm font-medium text-white mb-1">Ajuste fino dos grupos secundários</h3>
+            <p class="font-sans text-sm leading-relaxed" style="color: var(--muted);">
+              Depois de definir a prioridade Upper ou Lower, o praticante pode ajustar
+              individualmente os grupos secundários conforme suas necessidades — adicionando
+              exercícios para grupos que precisam de mais atenção ou aumentando levemente
+              o volume de séries.
+            </p>
+          </div>
+
+          <!-- Example block -->
+          <div class="rounded-xl overflow-hidden" style="border: 1px solid var(--border);">
+            <div class="px-5 py-3 flex items-center justify-between" style="background: var(--surface); border-bottom: 1px solid var(--border);">
+              <span class="section-label">Exemplo — Wave do PH</span>
+              <span class="font-mono text-xs" style="color: var(--subtle);">configuração pessoal</span>
+            </div>
+            <div class="divide-y" style="border-color: var(--border);">
+              {[
+                { group: 'Panturrilha', value: '2 exercícios', note: 'por sessão de Lower', highlight: true },
+                { group: 'Abdômen',     value: '1 exercício',  note: 'por sessão de Upper', highlight: false },
+                { group: 'Ombro lateral', value: '1 exercício', note: 'por sessão de Lower — sem estímulo indireto nos dias de Upper', highlight: false },
+              ].map((row) => (
+                <div class="flex items-center gap-4 px-5 py-3" style="border-top: 1px solid var(--border);">
+                  <span class="font-mono text-sm text-white w-32 shrink-0">{row.group}</span>
+                  <span
+                    class="font-mono text-sm font-bold"
+                    style={row.highlight ? "color: #06b6d4;" : "color: var(--muted);"}
+                  >
+                    {row.value}
+                  </span>
+                  <span class="font-mono text-xs ml-auto" style="color: var(--subtle);">{row.note}</span>
+                </div>
+              ))}
+            </div>
+            <div class="px-5 py-3" style="background: rgba(6,182,212,0.04); border-top: 1px solid var(--border);">
+              <p class="font-mono text-xs" style="color: var(--subtle);">
+                Panturrilha recebe o dobro de estímulo de abdômen — uma escolha deliberada
+                baseada em necessidade individual, não uma regra do método.
+              </p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>

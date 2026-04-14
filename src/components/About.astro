@@ -1,11 +1,14 @@
 ---
+const skills = ['Programação', 'Inteligência Artificial', 'Algoritmos', 'Tecnologia'];
+const clients = ['Heineken', 'McDonald\'s', 'Ticketmaster', 'OpenAI'];
 ---
 
 <section id="about" class="divider py-24">
   <div class="max-w-5xl mx-auto px-6">
     <div class="grid md:grid-cols-[1fr_2fr] gap-12 items-start">
+
       <!-- Label column -->
-      <div class="flex flex-col gap-3">
+      <div class="flex flex-col gap-3 md:sticky md:top-20">
         <span class="section-number">00 /</span>
         <h2 class="font-mono font-bold text-2xl text-white leading-tight">
           Quem sou eu
@@ -13,39 +16,124 @@
       </div>
 
       <!-- Content column -->
-      <div class="flex flex-col gap-6">
-        <!-- Avatar / photo placeholder -->
+      <div class="flex flex-col gap-7">
+
+        <!-- Identity -->
+        <div class="flex items-center gap-4">
+          <div
+            class="w-14 h-14 rounded-xl flex items-center justify-center font-mono font-bold text-lg shrink-0"
+            style="background: var(--accent-dim); border: 1px solid var(--accent-border); color: var(--accent);"
+          >
+            PH
+          </div>
+          <div>
+            <p class="font-mono font-bold text-white text-lg leading-tight">PH</p>
+            <div class="flex items-center gap-3 flex-wrap">
+              <a
+                href="https://squadfy.com.br"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="font-mono text-sm transition-opacity duration-150"
+                style="color: var(--accent);"
+                onmouseover="this.style.opacity='0.75'"
+                onmouseout="this.style.opacity='1'"
+              >
+                Squadfy↗
+              </a>
+              <span style="color: var(--border);">|</span>
+              <a
+                href="https://www.linkedin.com/in/owph/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="font-mono text-sm transition-opacity duration-150"
+                style="color: var(--muted);"
+                onmouseover="this.style.color='#fafafa'"
+                onmouseout="this.style.color='var(--muted)'"
+              >
+                LinkedIn↗
+              </a>
+              <span style="color: var(--border);">|</span>
+              <a
+                href="https://hevy.com/user/ow_ph"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="font-mono text-sm transition-opacity duration-150"
+                style="color: var(--muted);"
+                onmouseover="this.style.color='#fafafa'"
+                onmouseout="this.style.color='var(--muted)'"
+              >
+                Hevy↗
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bio -->
+        <p class="font-sans text-base leading-relaxed" style="color: var(--muted);">
+          Especialista em programação, inteligência artificial e algoritmos. Ao longo da carreira,
+          trabalhei em projetos de grande escala para empresas como
+          <span class="font-mono text-sm" style="color: var(--text);">Heineken, McDonald's, Ticketmaster</span> e
+          <span class="font-mono text-sm" style="color: var(--text);">OpenAI</span>.
+        </p>
+
+        <p class="font-sans text-base leading-relaxed" style="color: var(--muted);">
+          Faço musculação, uso o Método Wave e tenho progredido nos treinos toda semana.
+          O Wave nasceu da mesma forma que eu resolvo qualquer problema: quebrando o sistema em
+          partes, entendendo as variáveis e construindo um algoritmo para otimizar o resultado.
+        </p>
+
+        <!-- Skills -->
+        <div class="flex flex-col gap-2">
+          <span class="section-label">Especialidades</span>
+          <div class="flex flex-wrap gap-2">
+            {skills.map((s) => (
+              <span
+                class="font-mono text-xs px-3 py-1 rounded-full"
+                style="background: var(--surface); border: 1px solid var(--border); color: var(--subtle);"
+              >
+                {s}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <!-- Clients -->
+        <div class="flex flex-col gap-2">
+          <span class="section-label">Clientes</span>
+          <div class="flex flex-wrap gap-2">
+            {clients.map((c) => (
+              <span
+                class="font-mono text-xs px-3 py-1 rounded-full"
+                style="background: var(--surface); border: 1px solid var(--border); color: var(--subtle);"
+              >
+                {c}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <!-- Disclaimer -->
         <div
-          class="w-20 h-20 rounded-xl flex items-center justify-center font-mono font-bold text-2xl"
-          style="background: var(--surface); border: 1px solid var(--border); color: var(--accent);"
+          class="rounded-lg px-5 py-4 flex gap-3 items-start"
+          style="background: rgba(245,158,11,0.05); border: 1px solid rgba(245,158,11,0.2);"
         >
-          PH
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="shrink-0 mt-0.5">
+            <path
+              d="M8 1.5L14.5 13H1.5L8 1.5Z"
+              stroke="#f59e0b"
+              stroke-width="1.2"
+              stroke-linejoin="round"
+            />
+            <path d="M8 6v3.5" stroke="#f59e0b" stroke-width="1.2" stroke-linecap="round"/>
+            <circle cx="8" cy="11" r="0.6" fill="#f59e0b"/>
+          </svg>
+          <p class="font-mono text-xs leading-relaxed" style="color: rgba(245,158,11,0.8);">
+            Não sou formado em educação física. Este site não prescreve treinos.
+            O objetivo é discutir um modelo de periodização construído através de algoritmos
+            e fundamentado em artigos científicos sobre treinamento de força.
+          </p>
         </div>
 
-        <!-- Bio — TODO: substituir pelo texto real -->
-        <p class="font-sans text-base leading-relaxed" style="color: var(--muted);">
-          <!-- Placeholder — insira sua bio aqui -->
-          Breve descrição sobre quem você é, sua trajetória no treinamento de força
-          e o que te levou a desenvolver o Método Wave.
-        </p>
-
-        <p class="font-sans text-base leading-relaxed" style="color: var(--muted);">
-          <!-- Placeholder — contexto adicional: formação, experiência, motivação -->
-          Sua experiência com algoritmos, ciência do esporte e o problema prático
-          que o método veio resolver.
-        </p>
-
-        <!-- Tags / credenciais -->
-        <div class="flex flex-wrap gap-2 pt-2">
-          {['Treinamento de Força', 'Algoritmos', 'Ciência do Esporte'].map((tag) => (
-            <span
-              class="font-mono text-xs px-3 py-1 rounded-full"
-              style="background: var(--surface); border: 1px solid var(--border); color: var(--subtle);"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
       </div>
     </div>
   </div>

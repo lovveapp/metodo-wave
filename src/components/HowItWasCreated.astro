@@ -2,23 +2,23 @@
 const steps = [
   {
     step: '01',
-    title: 'Identificação do problema — TODO',
-    description: 'Descreva o problema prático que motivou a criação do método.',
+    title: 'O problema com as divisões convencionais',
+    description: 'A maioria dos treinadores e criadores de conteúdo convergia para Upper/Lower ou PPL — mas as justificativas raramente incluíam rigor matemático. As divisões eram defendidas por convenção, não por otimização de variáveis mensuráveis. Faltava matemática.',
   },
   {
     step: '02',
-    title: 'Revisão da literatura — TODO',
-    description: 'Quais artigos e evidências científicas foram a base do desenvolvimento.',
+    title: 'A atualização das diretrizes do ACSM',
+    description: 'Em 2025, o American College of Sports Medicine publicou seu Position Stand mais abrangente sobre treino resistido — sintetizando 137 revisões sistemáticas com mais de 30.000 participantes. Esse documento foi o gatilho: se os parâmetros que determinam resultado são mensuráveis, eles podem ser modelados.',
   },
   {
     step: '03',
-    title: 'Desenvolvimento do algoritmo — TODO',
-    description: 'Como o raciocínio algorítmico foi aplicado para estruturar a periodização.',
+    title: 'Construção do modelo matemático',
+    description: 'Com as variáveis definidas pela literatura — volume semanal por grupo, frequência mínima, intervalo de recuperação, sequenciamento intrassessão — o modelo foi construído como um problema de otimização com restrições. O resultado foi uma estrutura de 4 sessões que satisfaz todas as restrições simultaneamente.',
   },
   {
     step: '04',
-    title: 'Validação prática — TODO',
-    description: 'Como o método foi testado, refinado e validado na prática.',
+    title: 'Validação e refinamento prático',
+    description: 'O método foi aplicado no próprio treinamento. A cada ciclo, as variáveis foram ajustadas, o gráfico de progressão foi analisado e o modelo foi refinado. O Wave atual é o resultado de iterações contínuas entre teoria e prática.',
   },
 ];
 ---
@@ -26,8 +26,9 @@ const steps = [
 <section id="how-created" class="divider py-24">
   <div class="max-w-5xl mx-auto px-6">
     <div class="grid md:grid-cols-[1fr_2fr] gap-12 items-start">
+
       <!-- Label column -->
-      <div class="flex flex-col gap-3">
+      <div class="flex flex-col gap-3 md:sticky md:top-20">
         <span class="section-number">02 /</span>
         <h2 class="font-mono font-bold text-2xl text-white leading-tight">
           Como foi criado
@@ -37,16 +38,16 @@ const steps = [
       <!-- Content column -->
       <div class="flex flex-col gap-6">
         <p class="font-sans text-base leading-relaxed" style="color: var(--muted);">
-          <!-- Placeholder: contexto geral sobre a origem do método -->
-          Introdução sobre o processo de criação — a jornada de um problema prático
-          até um sistema estruturado com base em ciência e algoritmos.
+          O Wave nasceu de um problema prático: organizar o próprio treino de forma mais
+          racional do que o que estava disponível. A abordagem foi a mesma usada para
+          qualquer problema de engenharia — quebrar o sistema em partes, identificar as
+          variáveis e construir um algoritmo para otimizar o resultado.
         </p>
 
         <!-- Timeline -->
         <div class="flex flex-col gap-0 mt-2">
           {steps.map((s, i) => (
             <div class="flex gap-5">
-              <!-- Spine -->
               <div class="flex flex-col items-center">
                 <div
                   class="w-8 h-8 rounded-lg flex items-center justify-center font-mono text-xs font-bold shrink-0"
@@ -58,7 +59,6 @@ const steps = [
                   <div class="w-px flex-1 my-1" style="background: var(--border);"></div>
                 )}
               </div>
-              <!-- Content -->
               <div class="pb-8 pt-1">
                 <h3 class="font-mono text-sm font-medium text-white mb-1">{s.title}</h3>
                 <p class="font-sans text-sm leading-relaxed" style="color: var(--muted);">{s.description}</p>

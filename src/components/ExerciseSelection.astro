@@ -1,17 +1,31 @@
 ---
 const criteria = [
-  { title: 'Critério 1 — TODO', desc: 'Explique o critério de seleção de exercícios.' },
-  { title: 'Critério 2 — TODO', desc: 'Explique o critério de seleção de exercícios.' },
-  { title: 'Critério 3 — TODO', desc: 'Explique o critério de seleção de exercícios.' },
+  {
+    title: 'Ângulos diferentes para o mesmo grupo',
+    desc: 'Cada grupo muscular deve ser trabalhado em ao menos dois ângulos distintos dentro da sessão. Exemplo para peito: supino inclinado (ângulo ascendente) + crucifixo na polia alta (ângulo descendente). Ângulos diferentes recrutam fibras em comprimentos musculares distintos.',
+  },
+  {
+    title: 'Padrões de movimento diferentes',
+    desc: 'Além do ângulo, o padrão de movimento deve variar. Para costas: remada curvada (puxar horizontal) + pulley (puxar vertical). Isso garante que o grupo receba estímulos biomecânicamente distintos na mesma sessão.',
+  },
+  {
+    title: 'Variação sistemática — não aleatória',
+    desc: 'A evidência científica é clara: variação sistemática por critérios anatômicos e biomecânicos promove mais hipertrofia regional. Variação aleatória ou excesso de rotação de exercícios pode prejudicar os ganhos. O Wave define os critérios — a escolha dentro deles é do praticante.',
+  },
+  {
+    title: 'Respeite a posição na sessão',
+    desc: 'Exercícios mais pesados e compostos devem ocupar as posições ímpares (primário). Exercícios de isolamento ou complementares ficam nas posições pares (antagonista/complementar). A sequência importa tanto quanto a escolha do exercício.',
+  },
 ];
 ---
 
 <section id="exercises" class="divider py-24">
   <div class="max-w-5xl mx-auto px-6">
     <div class="grid md:grid-cols-[1fr_2fr] gap-12 items-start">
+
       <!-- Label column -->
-      <div class="flex flex-col gap-3">
-        <span class="section-number">05 /</span>
+      <div class="flex flex-col gap-3 md:sticky md:top-20">
+        <span class="section-number">06 /</span>
         <h2 class="font-mono font-bold text-2xl text-white leading-tight">
           Escolha dos<br />exercícios
         </h2>
@@ -23,9 +37,12 @@ const criteria = [
       <!-- Content column -->
       <div class="flex flex-col gap-8">
         <p class="font-sans text-base leading-relaxed" style="color: var(--muted);">
-          <!-- Placeholder: introdução à seleção de exercícios -->
-          Como o Wave guia a escolha dos exercícios — quais variáveis são consideradas,
-          o papel da especificidade e a relação com os objetivos do praticante.
+          O Wave não prescreve exercícios fixos — ele define os critérios pelos quais cada
+          exercício deve ser escolhido. O princípio central é a variação por
+          <span class="font-mono text-sm text-white">ângulo</span> e
+          <span class="font-mono text-sm text-white">padrão de movimento</span>: para cada
+          grupo muscular na sessão, os exercícios devem oferecer estímulos biomecânicamente
+          distintos entre si.
         </p>
 
         <!-- Criteria list -->
@@ -37,39 +54,29 @@ const criteria = [
                 class="rounded-lg px-5 py-4 flex gap-4 items-start"
                 style="background: var(--surface); border: 1px solid var(--border);"
               >
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                  class="shrink-0 mt-0.5"
-                >
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" class="shrink-0 mt-0.5">
                   <circle cx="9" cy="9" r="8" stroke="var(--accent)" stroke-width="1.2" opacity="0.4"/>
-                  <path
-                    d="M6 9l2 2 4-4"
-                    stroke="var(--accent)"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
+                  <path d="M6 9l2 2 4-4" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 <div>
                   <p class="font-mono text-sm font-medium text-white mb-1">{c.title}</p>
-                  <p class="font-sans text-sm" style="color: var(--muted);">{c.desc}</p>
+                  <p class="font-sans text-sm leading-relaxed" style="color: var(--muted);">{c.desc}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        <!-- Note box -->
+        <!-- Science note -->
         <div
           class="rounded-lg px-5 py-4"
           style="background: rgba(6,182,212,0.05); border: 1px solid var(--accent-border);"
         >
           <p class="font-mono text-xs leading-relaxed" style="color: var(--accent);">
-            <!-- Placeholder: nota importante ou aviso sobre seleção de exercícios -->
-            Nota: consideração importante sobre a escolha de exercícios — TODO.
+            Base científica: Kassiano et al. (2022) — revisão sistemática com Schoenfeld como
+            co-autor — demonstrou que variação sistemática de exercícios por critérios anatômicos
+            e biomecânicos promove adaptações hipertróficas regionais superiores à repetição do
+            mesmo padrão de movimento.
           </p>
         </div>
       </div>

@@ -2,23 +2,33 @@
 const points = [
   {
     id: '01',
-    title: 'Ponto de atenção 1 — TODO',
-    description: 'Descrição do ponto de atenção. O que o praticante precisa entender ou monitorar.',
+    title: 'Frequência: 5 ou 6x por semana',
+    description: 'O Wave foi desenhado para alta frequência. Com 5x, o ciclo de 4 sessões avança 1 por semana, criando um macrociclo de 4 semanas com ênfase rotativa. Com 6x, o balanço Front/Back alterna a cada semana automaticamente.',
   },
   {
     id: '02',
-    title: 'Ponto de atenção 2 — TODO',
-    description: 'Descrição do ponto de atenção.',
+    title: 'Volume dentro da faixa ótima',
+    description: 'Cada grupo muscular deve acumular entre 10 e 20 séries semanais. Grupos prioritários ficam no topo da faixa; grupos secundários, na base. Acima de 20 séries, a literatura não mostra benefício adicional consistente.',
   },
   {
     id: '03',
-    title: 'Ponto de atenção 3 — TODO',
-    description: 'Descrição do ponto de atenção.',
+    title: 'Respeite o sequenciamento intrassessão',
+    description: 'A ordem dos exercícios não é arbitrária. O grupo muscular em posição ímpar (1, 3, 5, 7) é o primário do dia; as posições pares são o antagonista ou grupo complementar. Alterar essa ordem reduz a qualidade do estímulo.',
   },
   {
     id: '04',
-    title: 'Ponto de atenção 4 — TODO',
-    description: 'Descrição do ponto de atenção.',
+    title: 'Varie ângulo e padrão de movimento',
+    description: 'Para cada grupo muscular na sessão, os exercícios devem ter ângulos e padrões de movimento diferentes. Exemplo: supino inclinado + crucifixo na polia alta para peito. Variação sistemática — não aleatória.',
+  },
+  {
+    id: '05',
+    title: 'O deload é automático — não force',
+    description: 'A alternância de ênfase entre semanas (mais Front / mais Back) é o mini deload estrutural do Wave. Não é necessário programar semanas de deload manualmente: elas emergem do próprio ciclo.',
+  },
+  {
+    id: '06',
+    title: 'Proporção de ombro: 1 : 1 : 2',
+    description: 'No Upper Front, o deltóide anterior já é recrutado como sinergista nos exercícios de peito. No Upper Back, o posterior já aparece nos exercícios de costas. O lateral não tem esse estímulo indireto em nenhum dia de Upper — por isso recebe estimulo direto 2x, nos dias de Lower. A proporção 1:1:2 emerge da biomecânica, não de uma escolha arbitrária.',
   },
 ];
 ---
@@ -26,8 +36,9 @@ const points = [
 <section id="key-points" class="divider py-24">
   <div class="max-w-5xl mx-auto px-6">
     <div class="grid md:grid-cols-[1fr_2fr] gap-12 items-start">
+
       <!-- Label column -->
-      <div class="flex flex-col gap-3">
+      <div class="flex flex-col gap-3 md:sticky md:top-20">
         <span class="section-number">03 /</span>
         <h2 class="font-mono font-bold text-2xl text-white leading-tight">
           Principais pontos<br />de atenção
@@ -41,7 +52,7 @@ const points = [
       <div class="grid sm:grid-cols-2 gap-4">
         {points.map((p) => (
           <div
-            class="rounded-lg p-5 flex flex-col gap-3 transition-colors duration-200"
+            class="rounded-lg p-5 flex flex-col gap-3"
             style="background: var(--surface); border: 1px solid var(--border);"
           >
             <span class="font-mono text-xs" style="color: var(--accent);">{p.id}</span>
