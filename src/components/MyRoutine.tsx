@@ -266,7 +266,8 @@ export default function MyRoutine() {
           <circle cx="8" cy="11" r="0.6" fill="#f59e0b"/>
         </svg>
         <p style={{ fontSize: 11, color: "rgba(245,158,11,0.8)", margin: 0, lineHeight: 1.6, fontFamily: "Space Grotesk, sans-serif" }}>
-          Esta é a rotina pessoal do PH — adaptada para 2m de altura e equipamentos da Nitrogym.
+          Esta é a rotina pessoal do PH — adaptada para 2m de altura e equipamentos da{" "}
+          <a href="https://www.instagram.com/nitrogym_ct/" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(245,158,11,0.8)", textDecoration: "underline" }}>Nitrogym↗</a>.
           Exercícios com barra foram substituídos por máquinas articuladas e cabos para preservar amplitude segura no ombro.
           Prioridade definida em Lower: grupos principais de Lower com 4 séries, Upper com 3.
         </p>
