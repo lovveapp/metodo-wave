@@ -1,0 +1,120 @@
+---
+// Template page used only for OG image generation via Puppeteer.
+// Not linked in the site navigation.
+import OgChart from '../components/OgChart.tsx';
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1200" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+      html, body {
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+        background: #09090b;
+        display: flex;
+        align-items: stretch;
+      }
+
+      .left {
+        width: 490px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 72px;
+        gap: 0;
+        position: relative;
+        z-index: 2;
+      }
+
+      .wordmark {
+        font-family: 'JetBrains Mono', 'Courier New', monospace;
+        font-weight: 700;
+        font-size: 148px;
+        color: #06b6d4;
+        letter-spacing: -6px;
+        line-height: 1;
+      }
+
+      .accent-bar {
+        width: 56px;
+        height: 2px;
+        background: #06b6d4;
+        opacity: 0.45;
+        border-radius: 1px;
+        margin: 18px 0 22px;
+      }
+
+      .subtitle-main {
+        font-family: 'JetBrains Mono', 'Courier New', monospace;
+        font-size: 18px;
+        color: #71717a;
+        letter-spacing: 0;
+        margin-bottom: 8px;
+      }
+
+      .subtitle-sub {
+        font-family: 'JetBrains Mono', 'Courier New', monospace;
+        font-size: 14px;
+        color: #52525b;
+        letter-spacing: 0;
+      }
+
+      .url {
+        position: absolute;
+        bottom: 36px;
+        left: 72px;
+        font-family: 'JetBrains Mono', 'Courier New', monospace;
+        font-size: 11px;
+        color: #3f3f46;
+        letter-spacing: 0.3px;
+      }
+
+      /* gradient bridge between text and chart */
+      .left::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -80px;
+        width: 80px;
+        height: 100%;
+        background: linear-gradient(to right, #09090b, transparent);
+        pointer-events: none;
+      }
+
+      .right {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="left">
+      <div class="wordmark">Wave</div>
+      <div class="accent-bar"></div>
+      <div class="subtitle-main">Método Wave</div>
+      <div class="subtitle-sub">Estruturação Baseada em Ciência</div>
+      <div class="url">lovveapp.github.io/metodo-wave</div>
+    </div>
+
+    <div class="right">
+      <OgChart client:load />
+    </div>
+  </body>
+</html>

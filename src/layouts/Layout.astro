@@ -4,13 +4,16 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
 }
 
 const {
-  title = 'Método Wave — Periodização Baseada em Ciência',
-  description = 'Um método de treinamento de força desenvolvido com base em algoritmos e evidências científicas atuais.',
+  title = 'Método Wave — Estruturação Baseada em Ciência',
+  description = 'Um método de treinamento de força desenvolvido com base em algoritmos e evidências científicas. Alta frequência, volume controlado e progressão sistemática.',
+  image = 'https://lovveapp.github.io/metodo-wave/og-image.png',
 } = Astro.props;
 
+const canonicalURL = 'https://lovveapp.github.io/metodo-wave';
 const base = import.meta.env.BASE_URL;
 ---
 
@@ -21,8 +24,34 @@ const base = import.meta.env.BASE_URL;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={description} />
+
+    <!-- Primary SEO -->
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="author" content="PH" />
+    <meta name="keywords" content="método wave, estruturação, musculação, treinamento de força, hipertrofia, wave loading, upper lower, PPL, algoritmo de treino" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Método Wave — Periodização Baseada em Ciência" />
+    <meta property="og:site_name" content="Método Wave" />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

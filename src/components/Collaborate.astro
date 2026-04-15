@@ -1,0 +1,85 @@
+---
+const channels = [
+  {
+    title: 'Discussões no GitHub',
+    description: 'Pergunte, sugira exercícios, questione uma decisão do método ou compartilhe sua adaptação. Todas as discussões ficam públicas e indexadas.',
+    href: 'https://github.com/lovveapp/metodo-wave/discussions',
+    label: 'Abrir discussão↗',
+    accent: true,
+  },
+  {
+    title: 'Reportar um problema',
+    description: 'Encontrou algo inconsistente no método, um erro nos cálculos de volume ou uma lacuna não coberta? Abra uma issue no repositório.',
+    href: 'https://github.com/lovveapp/metodo-wave/issues',
+    label: 'Abrir issue↗',
+    accent: false,
+  },
+  {
+    title: 'LinkedIn',
+    description: 'Para conversas mais diretas ou propostas de colaboração profissional, me encontre no LinkedIn.',
+    href: 'https://www.linkedin.com/in/owph/',
+    label: 'Conectar↗',
+    accent: false,
+  },
+];
+---
+
+<section id="collaborate" class="divider py-24">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="grid md:grid-cols-[1fr_2fr] gap-12 items-start">
+
+      <!-- Label column -->
+      <div class="flex flex-col gap-3 md:sticky md:top-20">
+        <span class="section-number">08 /</span>
+        <h2 class="font-mono font-bold text-2xl text-white leading-tight">
+          Colabore com<br />o método
+        </h2>
+        <p class="font-sans text-sm leading-relaxed mt-1" style="color: var(--subtle);">
+          O Wave é um projeto aberto. Críticas, adaptações e dúvidas são bem-vindas.
+        </p>
+      </div>
+
+      <!-- Content column -->
+      <div class="flex flex-col gap-6">
+
+        <p class="font-sans text-base leading-relaxed" style="color: var(--muted);">
+          O Método Wave não é um produto fechado — é um sistema em evolução. Se você aplica,
+          adapta ou questiona, sua contribuição tem valor. Use os canais abaixo para
+          participar da construção coletiva do método.
+        </p>
+
+        <div class="flex flex-col gap-4">
+          {channels.map((c) => (
+            <a
+              href={c.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="rounded-lg p-5 flex flex-col gap-3 transition-colors duration-150 group"
+              style={c.accent
+                ? "background: var(--surface); border: 1px solid var(--accent-border);"
+                : "background: var(--surface); border: 1px solid var(--border);"}
+              onmouseover={c.accent
+                ? "this.style.background='rgba(6,182,212,0.05)'"
+                : "this.style.borderColor='var(--accent-border)'"}
+              onmouseout={c.accent
+                ? "this.style.background='var(--surface)'"
+                : "this.style.borderColor='var(--border)'"}
+            >
+              <div class="flex items-center justify-between gap-4">
+                <h3 class="font-mono text-sm font-medium text-white">{c.title}</h3>
+                <span
+                  class="font-mono text-xs shrink-0"
+                  style={c.accent ? "color: var(--accent);" : "color: var(--muted);"}
+                >
+                  {c.label}
+                </span>
+              </div>
+              <p class="font-sans text-sm leading-relaxed" style="color: var(--muted);">{c.description}</p>
+            </a>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
