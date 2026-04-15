@@ -128,7 +128,7 @@ export default function WaveBuildChart() {
   const chartWidth = SESSION_SEQUENCE.length * SESSION_WIDTH + 48;
 
   return (
-    <div style={{ fontFamily: "'JetBrains Mono', monospace" }}>
+    <div style={{ fontFamily: "'JetBrains Mono', monospace", width: "100%", minWidth: 0 }}>
 
       {/* Step tabs */}
       <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 16 }}>

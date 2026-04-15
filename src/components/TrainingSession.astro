@@ -4,7 +4,7 @@ import WaveBuildChart from './WaveBuildChart.tsx';
 
 <section id="training-session" class="divider py-24">
   <div class="max-w-5xl mx-auto px-6">
-    <div class="grid md:grid-cols-[1fr_2fr] gap-12 items-start">
+    <div class="grid md:grid-cols-[1fr_2fr] gap-12 items-start overflow-x-hidden">
 
       <!-- Label column -->
       <div class="flex flex-col gap-3 md:sticky md:top-20">
@@ -18,7 +18,7 @@ import WaveBuildChart from './WaveBuildChart.tsx';
       </div>
 
       <!-- Content column -->
-      <div class="flex flex-col gap-6">
+      <div class="flex flex-col gap-6 min-w-0 w-full">
         <p class="font-sans text-base leading-relaxed" style="color: var(--muted);">
           O gráfico abaixo mostra como o Wave foi construído: começa com uma única sessão
           e vai adicionando treinos até o padrão de ondas emergir por completo.
@@ -30,9 +30,3 @@ import WaveBuildChart from './WaveBuildChart.tsx';
     </div>
   </div>
 </section>
-
-<style>
-  .scroll-wrap::-webkit-scrollbar { height: 5px; }
-  .scroll-wrap::-webkit-scrollbar-track { background: #18181b; border-radius: 3px; }
-  .scroll-wrap::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 3px; }
-</style>
